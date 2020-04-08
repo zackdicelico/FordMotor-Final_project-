@@ -1,0 +1,125 @@
+/*
+    Simple File Write and Read
+    By: Zackary DiCelico 
+
+*/
+
+
+import java.io.File;  // Import the File class
+import java.io.IOException;  // Import the IOException class to handle errors
+
+public class ReadWrite{
+
+
+  private class simpReadWrite{
+
+    /*
+        createFile: Create a new file named based on the parameter (String fileName)
+    */
+    public void createFile(String fileName){
+        
+      /*
+          Using IOException to create a file, with throw error in the event of a complication...
+      */
+
+      try {
+        File myFile = new File(fileName + ".txt");
+        if (myFile.createNewFile()) {
+          System.out.println("File created: " + myFile.getName()); // To print new file name
+        } else {
+          System.out.println("File already exists."); // To print if it was previously created
+        }
+  
+      // EXCEPTION 
+      } catch (IOException errorMess) {
+        System.out.println("ERROR in file creation...");
+        errorMess.printStackTrace();
+      }
+  
+    }
+  
+    // /*
+    //     checkFile: checks if a file exists (Manitenence in progress)
+    // */
+    // public boolean checkFile(String fileName){
+    //     boolean exists = false; 
+  
+    //   /*
+    //     Creates a temp file in order to then check if the file existed in the first place. REPLACE SOON WHEN NEW VERSION IS BUILT!!!
+    //   */
+
+    //     File temp =  new File(fileName); // A temporary file used for checking if a file named (String fileName) exists.
+   
+      
+    //   if(temp.createNewFile()){
+    //     System.out.println("The file " + fileName + "exists!");
+    //   } else {
+    //     System.out.println("The file " + fileName + "does not appear.");
+    //   }
+  
+    //   return exists;
+  
+    // }
+  
+    /*
+      Writes a message to a file
+    */
+    public void writeFile(String fileName, String Message){
+  
+    }
+  
+    /*
+      Reads file to terminal
+    */
+    public void readFile(String fileName){
+  
+    }
+  
+  }
+  
+  private class TestingSimpRW{
+
+      /*
+          A message method for letting me know what is happening in the terminal.
+      */
+      private void Message(){
+        System.out.println("Testing Simple Read and Write \nStarting...\n");
+      }
+  
+      /*
+          Testing Method for Simp Read and Write. Creating File object named "Test2".
+      */
+      private void PrintTest(){
+        Message();
+
+        String firstFileName = "Test2";
+        File myFirstFile = new File(firstFileName + ".txt");
+
+        String secondFileName = "Test3";
+
+        simpReadWrite tester = new simpReadWrite();
+        tester.createFile(secondFileName);
+        // tester.checkFile(secondFile);
+    
+      } 
+
+  
+
+
+  }
+  
+/*
+
+*/
+  public static void main(String[] arg){
+/*
+    Execute test 
+*/
+
+
+
+
+
+  }
+
+}
